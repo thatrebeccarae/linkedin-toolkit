@@ -13,7 +13,7 @@
 git clone https://github.com/thatrebeccarae/linkedin-toolkit.git
 ```
 
-[Why I Built This](#why-i-built-this) · [Who This Is For](#who-this-is-for) · [Getting Started](#getting-started) · [Skills](#skills) · [License](#license)
+[Live Demo](https://thatrebeccarae.github.io/linkedin-toolkit/) · [Why I Built This](#why-i-built-this) · [Who This Is For](#who-this-is-for) · [Getting Started](#getting-started) · [Skills](#skills) · [License](#license)
 
 </div>
 
