@@ -4,10 +4,10 @@
 
 **Claude Code skills for LinkedIn data analysis and career visualization.** Turn a LinkedIn data export into interactive dashboards, network graphs, and career timelines — all from your terminal.
 
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Skills-cc785c?style=for-the-badge&logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
+[![Python](https://img.shields.io/badge/Python_3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![GitHub stars](https://img.shields.io/github/stars/thatrebeccarae/linkedin-toolkit?style=for-the-badge&logo=github&color=181717)](https://github.com/thatrebeccarae/linkedin-toolkit/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-0A66C2?style=for-the-badge)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skills-6b5ae0?style=for-the-badge)](https://claude.ai)
-[![Python](https://img.shields.io/badge/Python_3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 
 ```bash
 git clone https://github.com/thatrebeccarae/linkedin-toolkit.git
