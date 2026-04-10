@@ -2,7 +2,7 @@
 
 # LinkedIn Toolkit
 
-**Claude Code skills for LinkedIn data analysis and career visualization.** Turn a LinkedIn data export into interactive dashboards, network graphs, and career timelines — all from your terminal.
+**Claude Code skills and browser userscripts for LinkedIn data analysis, career visualization, and live metrics capture.** Turn a LinkedIn data export into interactive dashboards, network graphs, and career timelines — or capture your post analytics as you browse. All from your terminal and your browser, no servers.
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skills-cc785c?style=for-the-badge&logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
 [![Python](https://img.shields.io/badge/Python_3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
@@ -13,7 +13,7 @@
 git clone https://github.com/thatrebeccarae/linkedin-toolkit.git
 ```
 
-[Live Demo](https://thatrebeccarae.github.io/linkedin-toolkit/) · [Why I Built This](#why-i-built-this) · [Who This Is For](#who-this-is-for) · [Getting Started](#getting-started) · [Skills](#skills) · [License](#license)
+[Live Demo](https://thatrebeccarae.github.io/linkedin-toolkit/) · [Why I Built This](#why-i-built-this) · [Who This Is For](#who-this-is-for) · [Getting Started](#getting-started) · [Skills](#skills) · [Userscripts](#userscripts) · [License](#license)
 
 </div>
 
@@ -32,6 +32,7 @@ I wanted to answer questions like: Who should I be talking to more? Is posting a
 - **Professionals** who want to understand their LinkedIn network beyond surface-level stats
 - **Job seekers** who want to identify warm connections at target companies
 - **Content creators** who want to know if posting actually drives growth
+- **Posters** who want their LinkedIn post metrics auto-exported to a spreadsheet or webhook
 - **Career changers** who want to visualize their professional evolution
 - **Anyone** who requested a LinkedIn data export and has no idea what to do with it
 
@@ -39,7 +40,7 @@ I wanted to answer questions like: Who should I be talking to more? Is posting a
 
 ```bash
 git clone https://github.com/thatrebeccarae/linkedin-toolkit.git
-cp -r linkedin-toolkit/skills/linkedin-data-viz ~/.claude/skills/
+cp -r linkedin-toolkit/skills/linkedin-data-viz/ ~/.claude/skills/
 ```
 
 Then open Claude Code and say: **"Analyze my LinkedIn data export"**
@@ -61,6 +62,7 @@ The skill walks you through a wizard: locating your export, previewing your data
 
 - Python 3.9+ (no pip installs needed — stdlib only)
 - Claude Code with skills support
+- Tampermonkey (Chrome/Firefox/Safari) — only if you want the userscript
 
 ## Skills
 
@@ -93,6 +95,16 @@ All data stays local. No API keys. No servers. Just Python, your browser, and yo
 Want to share your visualizations publicly? The built-in sanitizer replaces real names and companies with plausible fakes — all patterns stay intact but your contacts' privacy is protected.
 
 </details>
+
+## Userscripts
+
+### [LinkedIn Metrics Collector](userscripts/) — Passive post analytics capture
+
+A Tampermonkey userscript that quietly captures your LinkedIn post analytics as you browse your own analytics pages — impressions, reactions, comments, shares, the whole breakdown — and saves them locally or posts them to any webhook you control (n8n, Zapier, a Cloudflare Worker, your own server). No login, no scraping, nothing your browser wasn't already fetching.
+
+It doesn't log in for you, doesn't touch other users' data, doesn't use a headless browser. It only reads API responses LinkedIn is already serving to your own browser, and stores them somewhere you can actually use them. GDPR Art. 20 data portability, own data only.
+
+**[Install + webhook setup →](userscripts/README.md)**
 
 ## Contributing
 
