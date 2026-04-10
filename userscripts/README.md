@@ -1,3 +1,9 @@
+<div align="center">
+
+<img src="../assets/hero-userscripts.png" alt="Scrape your LinkedIn post engagement data, for free — a Tampermonkey userscript" width="100%">
+
+</div>
+
 # LinkedIn Userscripts
 
 Tampermonkey userscripts for collecting your own LinkedIn data in compliance with GDPR Art. 20 (data portability). Each script runs locally in your browser, never sends credentials anywhere, and only touches data LinkedIn already shows you on pages you visit.

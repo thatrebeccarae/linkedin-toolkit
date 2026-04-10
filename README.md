@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/hero-primary.png" alt="A LinkedIn toolkit for Claude Code — Claude Code skills and browser userscripts for LinkedIn power users" width="100%">
+
 # LinkedIn Toolkit
 
 **Claude Code skills and browser userscripts for LinkedIn data analysis, career visualization, and live metrics capture.** Turn a LinkedIn data export into interactive dashboards, network graphs, and career timelines — or capture your post analytics as you browse. All from your terminal and your browser, no servers.
