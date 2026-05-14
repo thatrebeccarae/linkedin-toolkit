@@ -2,20 +2,39 @@
 
 <img src="assets/hero-primary.png" alt="A LinkedIn toolkit for Claude Code — Claude Code skills and browser userscripts for LinkedIn power users" width="100%">
 
+<br>
+<br>
+
 # LinkedIn Toolkit
 
 **Claude Code skills and browser userscripts for LinkedIn data analysis, career visualization, and live metrics capture.** Turn a LinkedIn data export into interactive dashboards, network graphs, and career timelines — or capture your post analytics as you browse. All from your terminal and your browser, no servers.
 
+<br>
+<br>
+
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skills-cc785c?style=for-the-badge&logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
 [![Python](https://img.shields.io/badge/Python_3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Rebecca%20Rae%20Barton-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rebeccaraebarton)
+[![X](https://img.shields.io/badge/X-@rebeccarae-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/rebeccarae)
+[![Substack](https://img.shields.io/badge/Substack-dgtl%20dept-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://dgtldept.substack.com/welcome)
+[![Website](https://img.shields.io/badge/rebeccaraebarton.com-000000?style=for-the-badge&logo=google--chrome&logoColor=white)](https://rebeccaraebarton.com)
 [![GitHub stars](https://img.shields.io/github/stars/thatrebeccarae/linkedin-toolkit?style=for-the-badge&logo=github&color=181717)](https://github.com/thatrebeccarae/linkedin-toolkit/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-0A66C2?style=for-the-badge)](LICENSE)
+
+<br>
 
 ```bash
 git clone https://github.com/thatrebeccarae/linkedin-toolkit.git
 ```
 
-[Live Demo](https://thatrebeccarae.github.io/linkedin-toolkit/) · [Why I Built This](#why-i-built-this) · [Who This Is For](#who-this-is-for) · [Getting Started](#getting-started) · [Skills](#skills) · [Userscripts](#userscripts) · [License](#license)
+<br>
+
+**Works on Mac, Windows, and Linux.**
+
+<br>
+<br>
+
+[Live Demo](https://thatrebeccarae.github.io/linkedin-toolkit/) · [Why I Built This](#why-i-built-this) · [Who This Is For](#who-this-is-for) · [Getting Started](#getting-started) · [Skills](#skills) · [Userscripts](#userscripts) · [Related Projects](#related-projects) · [License](#license)
 
 </div>
 
@@ -70,7 +89,11 @@ The skill walks you through a wizard: locating your export, previewing your data
 
 ### [LinkedIn Data Viz](skills/linkedin-data-viz/) — 10 Interactive Visualizations
 
-> [**View Live Demo**](https://thatrebeccarae.github.io/linkedin-toolkit/) — See all 10 visualizations with sanitized sample data.
+<div align="center">
+
+[![View Live Demo](https://img.shields.io/badge/View_Live_Demo-Sanitized_Sample_Data-353535?style=for-the-badge)](https://thatrebeccarae.github.io/linkedin-toolkit/)
+
+</div>
 
 Turn a LinkedIn data export into a complete visual analysis:
 
@@ -107,6 +130,19 @@ A Tampermonkey userscript that quietly captures your LinkedIn post analytics as 
 It doesn't log in for you, doesn't touch other users' data, doesn't use a headless browser. It only reads API responses LinkedIn is already serving to your own browser, and stores them somewhere you can actually use them. GDPR Art. 20 data portability, own data only.
 
 **[Install + webhook setup →](userscripts/README.md)**
+
+## Related Projects
+
+If LinkedIn Toolkit works on *your own data export*, [stickerdaniel/linkedin-mcp-server](https://github.com/stickerdaniel/linkedin-mcp-server) works on *live LinkedIn while you're logged in*. It's a Model Context Protocol server that gives Claude (and other MCP clients) read access to profiles, companies, jobs, your feed, and your inbox via your browser session — plus optional write tools for connection requests and messages. Apache 2.0, actively maintained, with an independent MCPSafe AIVSS security score of 89/100 (Grade B).
+
+Different scope, different tradeoffs. Worth knowing before you reach for it:
+
+- **Browser session, not the official LinkedIn API.** It reads what your own browser already sees. No app review or developer credentials needed — but it operates outside LinkedIn's official APIs and may conflict with the LinkedIn User Agreement. Your call.
+- **`get_my_profile` exposes private "private to you" analytics** — profile views, post impressions, search appearances, your Open-to-Work status. Anything with session access can read these. Consider this before granting tool access to any MCP client.
+- **Slug ≠ display name.** `get_company_profile("anthropic")` returns a 10-person VC fund, not the AI lab (whose slug is `anthropicresearch`). The tool returns the wrong entity cleanly with no error — call `search_companies` first if you don't know the slug.
+- **Write tools** (`connect_with_person`, `send_message`) require explicit confirmation flags but still touch real human inboxes. Use deliberately.
+
+For *your own data, fully local, no session risk*, this toolkit is the answer. For *live read access to LinkedIn from inside Claude*, that one is.
 
 ## Contributing
 
