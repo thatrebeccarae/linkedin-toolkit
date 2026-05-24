@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LinkedIn Metrics Collector
 // @namespace    https://rebeccaraebarton.com
-// @version      2.2.0
+// @version      2.3.0
 // @description  Passively intercepts LinkedIn analytics API responses, stores locally, and optionally pushes to a user-configurable webhook. GDPR Art. 20 data portability — own data only.
 // @author       Rebecca Rae Barton
 // @match        https://www.linkedin.com/analytics/*
@@ -23,12 +23,21 @@
 //     LI_METRICS_WEBHOOK_URL  =  https://your-webhook-endpoint.example/path
 //   If unset, metrics are still captured to localStorage and can be exported
 //   via the "Export Metrics JSON" button.
+//
+// Compatible receivers: any endpoint that accepts POST with
+// Content-Type: application/json and the payload shape
+// { source, version, collectedAt, postCount, posts: [...] }.
+// Suggested patterns: a small FastAPI/Flask/Express endpoint that appends
+// each batch as one JSONL line, or a workflow tool's HTTP webhook trigger.
+// If your receiver requires auth, embed the token as a query string in
+// LI_METRICS_WEBHOOK_URL (this script's POST surface doesn't expose
+// custom headers).
 
 (function () {
   'use strict';
 
   const STORAGE_KEY = 'li_metrics_collected';
-  const VERSION = '2.2.0';
+  const VERSION = '2.3.0';
   const WEBHOOK_URL = (typeof GM_getValue === 'function')
     ? GM_getValue('LI_METRICS_WEBHOOK_URL', '')
     : '';
